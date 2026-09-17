@@ -90,14 +90,14 @@ p_post_array = (P_T_given_D * p_array) / ((P_T_given_D * p_array) + (P_T_given_D
 
 fig, ax = plt.subplots(figsize=(9, 4.5))
 ax.plot(p_array * 100, p_post_array * 100, color='#1f77b4', lw=2.5, 
-        label=f'Falso Alarme $P(T^+ \vert{} D^c) = {falso_alarme_pct}\\%$')
+        label=f'Falso Alarme $P(T^+ | D^c) = {falso_alarme_pct}%')
 
 # Destaque do ponto atual
 ax.plot(prevalencia_pct, P_D_given_T1 * 100, 'ro', markersize=8, label=f'Ponto Atual ({prevalencia_pct:.3f}%, {P_D_given_T1*100:.2f}%)')
 ax.axvline(x=prevalencia_pct, color='red', linestyle='--', alpha=0.5)
 ax.axhline(y=P_D_given_T1 * 100, color='red', linestyle='--', alpha=0.5)
 
-ax.set_title(r'Impacto do Falso Alarme em Condições Raras ($0.001\%$ a $20\%$ de Prevalência)', fontsize=12, fontweight='bold')
+ax.set_title('Impacto do Falso Alarme em Condições Raras (0.001% a 20% de Prevalência)', fontsize=12, fontweight='bold')
 ax.set_xlabel('Prevalência Populacional P(D) (%)', fontsize=10)
 ax.set_ylabel('Probabilidade a Posteriori P(D|T⁺) (%)', fontsize=10)
 ax.set_xlim(0, 20)
@@ -112,7 +112,7 @@ st.pyplot(fig)
 st.header("3. Módulo de Testes em Sequência (Atualização Sequencial)")
 
 st.write("""
-Demonstração de como a **probabilidade a posteriori** do $1^o$ teste torna-se a **probabilidade a priori** do $2^o$ teste confirmatório independente.
+Demonstração de como a **probabilidade a posteriori** do 1º teste torna-se a **probabilidade a priori** do 2º teste confirmatório independente.
 """)
 
 # Cálculo do 2º Teste Confirmatório
