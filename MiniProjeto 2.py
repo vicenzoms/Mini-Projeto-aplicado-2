@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Sep 17 15:32:06 2026
-
-@author: Vicenzo
-"""
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
@@ -96,7 +90,7 @@ p_post_array = (P_T_given_D * p_array) / ((P_T_given_D * p_array) + (P_T_given_D
 
 fig, ax = plt.subplots(figsize=(9, 4.5))
 ax.plot(p_array * 100, p_post_array * 100, color='#1f77b4', lw=2.5, 
-        label=fr'Falso Alarme $P(T^+\vert{}D^c) = {falso_alarme_pct}\%$')
+        label=f'Falso Alarme $P(T^+ \vert{} D^c) = {falso_alarme_pct}\\%$')
 
 # Destaque do ponto atual
 ax.plot(prevalencia_pct, P_D_given_T1 * 100, 'ro', markersize=8, label=f'Ponto Atual ({prevalencia_pct:.3f}%, {P_D_given_T1*100:.2f}%)')
